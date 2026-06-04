@@ -25,9 +25,6 @@ Key Focus Areas:
 - Entity-Relationship Modeling (OLTP - Transactional Database Design)
 - Dimensional Modeling (OLAP - Analytical Database Design)
 - Star Schema implementation for Business Intelligence
-- Slowly Changing Dimensions (SCD) implementation
-- Time hierarchies for multidimensional analysis
-- Database modeling and visualization
 
 ## 🛠 Technologies Used
 
@@ -36,19 +33,12 @@ Key Focus Areas:
 | SQL Server | Enterprise relational database platform |
 | SQL Server Management Studio (SSMS) | Database design and development tool |
 | Entity Relationship Diagram (ERD) | Visual modeling of entities and relationships |
-| T-SQL | Database scripting and query language |
 | Git | Version control |
 | GitHub | Repository hosting and collaboration |
 
 ## 📦 Prerequisites
 
 Before getting started, ensure you have the following installed on your system:
-
-- **SQL Server** (Express Edition or higher)
-  - Download: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
-
-- **SQL Server Management Studio (SSMS)** (latest version)
-  - Download: https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 
 - **Git** (for cloning the repository)
   - Download: https://git-scm.com/
@@ -74,20 +64,12 @@ Open `Analysis.pdf` to understand:
 - Project objectives and scope
 - Entity-Relationship Model design
 - Dimensional Model specifications
-- Design decisions and rationale
 
 ### Step 3: Examine the Models
 
 Navigate to the project folders:
 - `1. Models/1. Relational/` - Entity-Relationship Model (ERM/OLTP)
 - `1. Models/2. Dimensional/` - Dimensional Model (OLAP/Star Schema)
-
-### Step 4: Access the Models in SSMS
-
-1. Open SQL Server Management Studio
-2. Connect to your SQL Server instance
-3. Review the ERD diagrams and model visualizations
-4. Examine the generated SQL scripts and schema definitions
 
 ## 📂 Project Structure
 
@@ -96,16 +78,10 @@ HotelAndStars/
 │
 ├── 1. Models/
 │   ├── 1. Relational/
-│   │   ├── Entity-Relationship diagrams
-│   │   ├── OLTP schema definitions
-│   │   └── Transactional database structure
+│   │   ├── Entity-Relationship diagram
 │   │
 │   └── 2. Dimensional/
-│       ├── Dimensional model diagrams
-│       ├── OLAP schema definitions
-│       ├── Star Schema structure
-│       ├── Fact and Dimension tables
-│       └── Hierarchies and relationships
+│       ├── Dimensional model diagram
 │
 ├── 2. Translations/
 │   ├── Brazilian Portuguese translations
@@ -130,8 +106,8 @@ HotelAndStars/
 
 Contains the core database models in both OLTP and OLAP structures:
 
-- **1. Relational/** - The transactional database design (ERM) showing entities, relationships, and constraints
-- **2. Dimensional/** - The analytical database design (Star Schema) showing facts, dimensions, and hierarchies
+- **1. Relational/** - The transactional database design (ERM) showing entities, and relationships
+- **2. Dimensional/** - The analytical database design (Star Schema) showing facts, and dimensions
 
 #### 2. Translations/
 
@@ -149,10 +125,6 @@ Brazilian Portuguese translations and localized analysis of the dimensional mode
 
 ✅ Enable multidimensional analysis of hotel operations and customer stays
 
-✅ Implement Slowly Changing Dimensions (SCD) with temporal validity tracking
-
-✅ Create time hierarchies for drill-down and drill-up analysis capabilities
-
 ## 🏗️ Key Concepts
 
 ### Entity-Relationship Model (ERM)
@@ -168,26 +140,12 @@ The OLTP model represents the transactional system with:
 The OLAP model transforms the ERM into an analytical structure with:
 
 **Dimensions:**
-- **dim_customer** ('who?') - Customer attributes with temporal versioning
-- **dim_accommodation** ('where?') - Accommodation attributes with temporal versioning
-- **dim_time** ('when?') - Time hierarchies (day, month, quarter, year, weekday)
+- **dim_customer_location** - Customers locations
+- **dim_accommodation_type** - Accommodation type attributes
+- **dim_time** - Time hierarchies (day, month, quarter, year, weekday)
 
 **Fact Table:**
-- **fact_stay** - Consolidated transaction table with stay metrics at customer-stay granularity
-
-### Slowly Changing Dimensions (SCD)
-
-Type 2 implementation preserves historical dimension changes with:
-- `validity_start_date` - When the record became valid
-- `validity_end_date` - When the record expired
-- Enables temporal analysis and trend identification
-
-### Dimension Hierarchies
-
-Time dimension with multiple levels supporting:
-- Drill-down analysis (year → quarter → month → day)
-- Roll-up aggregation
-- Comparative analysis across time periods
+- **fact_stay** - Consolidated transaction table with metrics on length of stay at a granular level of daily occupancy information.
 
 ## 📚 Learning Outcomes
 
@@ -196,10 +154,7 @@ This project strengthens skills in:
 - Database Design: Designing efficient relational database schemas
 - Data Modeling: OLTP vs OLAP architectural differences
 - Dimensional Modeling: Star Schema and Kimball methodology
-- Business Intelligence: End-to-end BI solution architecture
-- SSMS Proficiency: Database modeling and visualization tools
-- Temporal Data Management: Slowly changing dimensions and versioning
-- Data Visualization: Understanding logical data structures for analytics
+- SSMS Proficiency: Modeling and visualization tools
 
 ## 🤝 Contributing
 
@@ -224,7 +179,7 @@ This project is available for educational and portfolio purposes.
 Malba Vinicius Lopes Santos
 
 - GitHub: [@mlbvncs](https://github.com/mlbvncs)
-- Portfolio: Business Intelligence & Database Design
+- Portfolio: Business Intelligence
 
 Last Updated: June 2, 2026
 Status: Active Development
