@@ -32,7 +32,6 @@ Key Focus Areas:
 |---|---|
 | SQL Server | Enterprise relational database platform |
 | SQL Server Management Studio (SSMS) | Database design and development tool |
-| Entity Relationship Diagram (ERD) | Visual modeling of entities and relationships |
 | Git | Version control |
 | GitHub | Repository hosting and collaboration |
 
